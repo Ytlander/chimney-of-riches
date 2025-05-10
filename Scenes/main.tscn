@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
 [ext_resource type="PackedScene" uid="uid://gphfo5ll58sk" path="res://Scenes/player.tscn" id="1_lbt4y"]
-[ext_resource type="PackedScene" uid="uid://lxq5ynvhk2q5" path="res://Scenes/stone_green.tscn" id="1_m54sv"]
 [ext_resource type="Script" path="res://Scenes/wall_segment.gd" id="2_afgnd"]
+[ext_resource type="Script" path="res://Scenes/spawner_controller.gd" id="5_anlq8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="5_unnun"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
@@ -12,7 +12,7 @@ distance = 0.0157233
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -170)
+position = Vector2(-2, -171)
 zoom = Vector2(4, 4)
 
 [node name="PlayerBoundaries" type="Node2D" parent="."]
@@ -42,7 +42,7 @@ rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="BoundaryBottom" type="StaticBody2D" parent="PlayerBoundaries"]
-position = Vector2(-1, -14)
+position = Vector2(-1, 42)
 rotation = 4.71236
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryBottom"]
@@ -50,6 +50,7 @@ rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="ChimneySweep" parent="." instance=ExtResource("1_lbt4y")]
+position = Vector2(-1, -200)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("2_afgnd")
@@ -66,13 +67,23 @@ position = Vector2(0, 199)
 [node name="Wall segment3" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("1_7ob5s")]
 position = Vector2(0, 399)
 
-[node name="StoneGreen" parent="." instance=ExtResource("1_m54sv")]
-position = Vector2(-59, 18)
-
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_unnun")
 
 [node name="Timer" type="Timer" parent="GameManager"]
 
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(0, 311)
+script = ExtResource("5_anlq8")
+
+[node name="SpawnPosLeft" type="Node2D" parent="Spawner"]
+position = Vector2(-50, 0)
+
+[node name="SpawnPosRight" type="Node2D" parent="Spawner"]
+position = Vector2(50, 0)
+
+[node name="Timer" type="Timer" parent="Spawner"]
+
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
