@@ -9,7 +9,6 @@
 distance = 0.0157233
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vxka"]
-radius = 8.0
 height = 20.0
 
 [node name="Main" type="Node2D"]
@@ -18,20 +17,37 @@ height = 20.0
 position = Vector2(-2, -170)
 zoom = Vector2(4, 4)
 
-[node name="World boundaries" type="Node2D" parent="."]
+[node name="PlayerBoundaries" type="Node2D" parent="."]
+position = Vector2(1, -211)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="World boundaries"]
-position = Vector2(-81, 0)
+[node name="BoundaryLeft" type="StaticBody2D" parent="PlayerBoundaries"]
+position = Vector2(-80, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World boundaries/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryLeft"]
 rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="World boundaries"]
-position = Vector2(81, 0)
+[node name="BoundaryRight" type="StaticBody2D" parent="PlayerBoundaries"]
+position = Vector2(78, 0)
 rotation = -3.14159
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World boundaries/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryRight"]
+rotation = 1.57304
+shape = SubResource("WorldBoundaryShape2D_3vvi4")
+
+[node name="BoundaryTop" type="StaticBody2D" parent="PlayerBoundaries"]
+position = Vector2(-1, -95)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryTop"]
+rotation = 1.57304
+shape = SubResource("WorldBoundaryShape2D_3vvi4")
+
+[node name="BoundaryBottom" type="StaticBody2D" parent="PlayerBoundaries"]
+position = Vector2(-1, -14)
+rotation = 4.71236
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryBottom"]
 rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
@@ -52,14 +68,13 @@ region_enabled = true
 region_rect = Rect2(0, 300, 20, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChimneySweep"]
-position = Vector2(0, 10)
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_3vxka")
 
 [node name="Sprite2D" type="Sprite2D" parent="ChimneySweep"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("2_afgnd")
-scroll_speed = 100
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, -255)
