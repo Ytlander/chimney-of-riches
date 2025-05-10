@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=7 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_qcbsb"]
+[ext_resource type="Script" path="res://Scenes/wall_segment.gd" id="2_afgnd"]
 [ext_resource type="Texture2D" uid="uid://fa75wdqmgnif" path="res://assets/sprites/Basic graphics.png" id="2_carle"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
@@ -12,25 +14,9 @@ height = 20.0
 
 [node name="Main" type="Node2D"]
 
-[node name="Wall segment" parent="." instance=ExtResource("1_7ob5s")]
-
-[node name="Wall segment2" parent="." instance=ExtResource("1_7ob5s")]
-position = Vector2(0, 100)
-
-[node name="Wall segment3" parent="." instance=ExtResource("1_7ob5s")]
-position = Vector2(0, 200)
-
-[node name="Wall segment4" parent="." instance=ExtResource("1_7ob5s")]
-position = Vector2(0, 300)
-
-[node name="Wall segment5" parent="." instance=ExtResource("1_7ob5s")]
-position = Vector2(0, 400)
-
-[node name="Wall segment6" parent="." instance=ExtResource("1_7ob5s")]
-position = Vector2(0, 500)
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(26, 244)
+position = Vector2(-2, -170)
+zoom = Vector2(4, 4)
 
 [node name="World boundaries" type="Node2D" parent="."]
 
@@ -49,16 +35,40 @@ rotation = -3.14159
 rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="ChimneySweep" type="CharacterBody2D" parent="."]
+position = Vector2(0, -242)
+script = ExtResource("1_qcbsb")
 
-[node name="Head" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, 15)
+[node name="Head" type="Sprite2D" parent="ChimneySweep"]
+position = Vector2(0, 10)
 texture = ExtResource("2_carle")
 region_enabled = true
 region_rect = Rect2(0, 270, 20, 30)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Rope" type="Sprite2D" parent="ChimneySweep/Head"]
+position = Vector2(0, -45)
+texture = ExtResource("2_carle")
+region_enabled = true
+region_rect = Rect2(0, 300, 20, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChimneySweep"]
 position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_3vxka")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ChimneySweep"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_afgnd")
+scroll_speed = 100
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -255)
+motion_mirroring = Vector2(0, 100)
+
+[node name="Wall segment" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("1_7ob5s")]
+
+[node name="Wall segment2" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 199)
+
+[node name="Wall segment3" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 399)
