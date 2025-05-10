@@ -23,7 +23,7 @@ func spawn():
 	var stone_to_spawn = stone_array.pick_random().instantiate()
 	self.add_child(stone_to_spawn)
 	stone_to_spawn.position = position_array.pick_random()
-	var random_time = randf_range(0.3, 2)
+	var random_time = randf_range(0.3, 0.7)
 	timer.wait_time = random_time
 	timer.start()
 	
