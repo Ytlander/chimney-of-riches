@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://lxq5ynvhk2q5"]
+
+[ext_resource type="Texture2D" uid="uid://fa75wdqmgnif" path="res://assets/sprites/Basic graphics.png" id="1_dijle"]
+[ext_resource type="Script" path="res://scripts/stone.gd" id="1_lkkn6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_edvfy"]
+
+[node name="StoneGreen" type="Area2D"]
+script = ExtResource("1_lkkn6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dijle")
+region_enabled = true
+region_rect = Rect2(0, 200, 40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_edvfy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
