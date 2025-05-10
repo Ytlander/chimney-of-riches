@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4spig4jnwa4l"]
+
+[ext_resource type="PackedScene" uid="uid://lxq5ynvhk2q5" path="res://Scenes/stone_green.tscn" id="1_df1ui"]
+
+[node name="Wave1" type="Node2D"]
+
+[node name="StoneGreen" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-66, 24)
+
+[node name="StoneGreen2" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-43, 46)
+
+[node name="StoneGreen3" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-17, 68)
+
+[node name="StoneGreen4" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(10, 87)
+
+[node name="StoneGreen5" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(35, 108)
+
+[node name="StoneGreen6" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(65, 174)
+value = 5
+
+[node name="StoneGreen7" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(41, 190)
+value = 5
+
+[node name="StoneGreen8" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(17, 206)
+value = 5
+
+[node name="StoneGreen9" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-8, 223)
+value = 5
+
+[node name="StoneGreen10" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-37, 242)
+value = 5

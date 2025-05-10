@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=8 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
 [ext_resource type="PackedScene" uid="uid://gphfo5ll58sk" path="res://Scenes/player.tscn" id="1_lbt4y"]
-[ext_resource type="Script" path="res://Scenes/wall_segment.gd" id="2_afgnd"]
-[ext_resource type="Script" path="res://Scenes/spawner_controller.gd" id="5_anlq8"]
+[ext_resource type="Script" path="res://scripts/wall_segment.gd" id="2_afgnd"]
+[ext_resource type="Script" path="res://scripts/spawner_controller.gd" id="5_anlq8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="5_unnun"]
+[ext_resource type="PackedScene" uid="uid://b4spig4jnwa4l" path="res://Scenes/Waves/wave_1.tscn" id="6_4ep8a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
 distance = 0.0157233
@@ -76,6 +77,7 @@ script = ExtResource("5_unnun")
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(0, 311)
 script = ExtResource("5_anlq8")
+wave_array = Array[PackedScene]([ExtResource("6_4ep8a")])
 
 [node name="SpawnPosLeft" type="Node2D" parent="Spawner"]
 position = Vector2(-50, 0)
