@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://discv8041v560"]
+
+[ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
+[ext_resource type="Texture2D" uid="uid://fa75wdqmgnif" path="res://assets/sprites/Basic graphics.png" id="2_carle"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
+distance = 0.0157233
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vxka"]
+radius = 8.0
+height = 20.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Wall segment" parent="." instance=ExtResource("1_7ob5s")]
+
+[node name="Wall segment2" parent="." instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 100)
+
+[node name="Wall segment3" parent="." instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 200)
+
+[node name="Wall segment4" parent="." instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 300)
+
+[node name="Wall segment5" parent="." instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 400)
+
+[node name="Wall segment6" parent="." instance=ExtResource("1_7ob5s")]
+position = Vector2(0, 500)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(26, 244)
+
+[node name="World boundaries" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World boundaries"]
+position = Vector2(-81, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World boundaries/StaticBody2D"]
+rotation = 1.57304
+shape = SubResource("WorldBoundaryShape2D_3vvi4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="World boundaries"]
+position = Vector2(81, 0)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World boundaries/StaticBody2D2"]
+rotation = 1.57304
+shape = SubResource("WorldBoundaryShape2D_3vvi4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 15)
+texture = ExtResource("2_carle")
+region_enabled = true
+region_rect = Rect2(0, 270, 20, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_3vxka")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]

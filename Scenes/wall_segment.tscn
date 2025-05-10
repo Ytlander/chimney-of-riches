@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5js8qs20agaq"]
+
+[ext_resource type="Texture2D" uid="uid://fa75wdqmgnif" path="res://assets/sprites/Basic graphics.png" id="1_c3ubu"]
+
+[node name="Wall segment" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_c3ubu")
+region_enabled = true
+region_rect = Rect2(0, 0, 180, 100)
+
+[node name="Walls" type="Sprite2D" parent="."]
+texture = ExtResource("1_c3ubu")
+region_enabled = true
+region_rect = Rect2(0, 100, 180, 100)
