@@ -31,41 +31,27 @@ func spawn_wave():
 	var wave_to_spawn = wave_array.pick_random().instantiate()
 	self.add_child(wave_to_spawn)
 	wave_to_spawn.global_position = self.global_position
-	#var coin_toss = randi_range(0, 1)
-	#
-	#if coin_toss == 1:
-		#random_spawning = true
-	#if coin_toss == 0:
-		#random_spawning = false
+	var coin_toss = randi_range(0, 1)
 	
-func spawn(stones_to_spawn):
+	if coin_toss == 1:
+		random_spawning = true
+	if coin_toss == 0:
+		random_spawning = false
 	
-	for i in stones_to_spawn:
+func spawn(number_to_spawn):
+	
+	for i in number_to_spawn:
 		var stone_to_spawn = stone_array.pick_random().instantiate()
 		self.add_child(stone_to_spawn)
 		stone_to_spawn.position = position_array.pick_random()
+		if i == number_to_spawn -1:
+			stone_to_spawn.last_in_wave = true
 		await get_tree().create_timer(0.3).timeout
 	
 	random_spawning = false
-	
-	#var random_time = randf_range(0.3, 0.7)
-	#timer.wait_time = 0.3
-	#timer.start()
 	
 func on_wave_ended():
 	if random_spawning:
 		spawn(5)
 	elif random_spawning == false:
 		spawn_wave()
-		
-	
-func _on_timer_timeout():
-	if StatesAndStuff.going_down:
-		if random_spawning:
-			spawn(5)
-			countdown -= 1
-			if countdown == 0:
-				random_spawning = false
-				countdown = 5
-		if random_spawning == false:
-			spawn_wave()
