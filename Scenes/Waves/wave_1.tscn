@@ -3,38 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://lxq5ynvhk2q5" path="res://Scenes/stone_green.tscn" id="1_df1ui"]
 
 [node name="Wave1" type="Node2D"]
+position = Vector2(0, 1)
 
 [node name="StoneGreen" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(-66, 24)
+position = Vector2(-66, 38)
 
 [node name="StoneGreen2" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(-43, 46)
+position = Vector2(-43, 60)
 
 [node name="StoneGreen3" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(-17, 68)
+position = Vector2(-17, 81)
 
 [node name="StoneGreen4" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(10, 87)
+position = Vector2(10, 101)
 
 [node name="StoneGreen5" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(35, 108)
+position = Vector2(35, 122)
 
 [node name="StoneGreen6" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(65, 174)
+position = Vector2(65, 188)
 value = 5
 
 [node name="StoneGreen7" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(41, 190)
+position = Vector2(41, 204)
 value = 5
 
 [node name="StoneGreen8" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(17, 206)
+position = Vector2(17, 220)
 value = 5
 
 [node name="StoneGreen9" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(-8, 223)
+position = Vector2(-8, 237)
 value = 5
 
 [node name="StoneGreen10" parent="." instance=ExtResource("1_df1ui")]
-position = Vector2(-37, 242)
+position = Vector2(-37, 256)
 value = 5
+last_in_wave = true

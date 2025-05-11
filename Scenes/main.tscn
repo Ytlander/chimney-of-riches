@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=10 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
 [ext_resource type="PackedScene" uid="uid://gphfo5ll58sk" path="res://Scenes/player.tscn" id="1_lbt4y"]
@@ -6,14 +6,18 @@
 [ext_resource type="Script" path="res://scripts/spawner_controller.gd" id="5_anlq8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="5_unnun"]
 [ext_resource type="PackedScene" uid="uid://b4spig4jnwa4l" path="res://Scenes/Waves/wave_1.tscn" id="6_4ep8a"]
+[ext_resource type="Script" path="res://scripts/spawn_boundary.gd" id="7_qqsn7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
 distance = 0.0157233
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nt7k"]
+size = Vector2(178.011, 20)
+
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -171)
+position = Vector2(0, -171)
 zoom = Vector2(4, 4)
 
 [node name="PlayerBoundaries" type="Node2D" parent="."]
@@ -87,5 +91,15 @@ position = Vector2(50, 0)
 
 [node name="Timer" type="Timer" parent="Spawner"]
 
+[node name="SpawnBoundary" type="Area2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_qqsn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnBoundary"]
+position = Vector2(0, 278)
+rotation = -3.13862
+shape = SubResource("RectangleShape2D_7nt7k")
+
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="area_exited" from="SpawnBoundary" to="SpawnBoundary" method="_on_area_exited"]

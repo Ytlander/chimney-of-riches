@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var value = 0
+@export var last_in_wave = false
 
 func _physics_process(delta):
 	if StatesAndStuff.going_down:
