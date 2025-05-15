@@ -21,7 +21,7 @@ StatesAndStuff="*res://scripts/states_and_stuff.gd"
 
 [display]
 
-window/size/viewport_height=1080
+window/size/viewport_height=1000
 window/size/resizable=false
 
 [input]

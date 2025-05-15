@@ -92,6 +92,8 @@ position = Vector2(50, 0)
 
 [node name="Timer" type="Timer" parent="Spawner"]
 
+[node name="Stones" type="Node2D" parent="Spawner"]
+
 [node name="SpawnBoundary" type="Area2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_qqsn7")
@@ -101,6 +103,17 @@ position = Vector2(0, 278)
 rotation = -3.13862
 shape = SubResource("RectangleShape2D_7nt7k")
 
+[node name="StartRoundButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = -23.0
+offset_top = -246.0
+offset_right = 24.0
+offset_bottom = -215.0
+text = "Start"
+
+[connection signal="round_end_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_end_signal"]
+[connection signal="round_start_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_start_signal"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="area_exited" from="SpawnBoundary" to="SpawnBoundary" method="_on_area_exited"]
+[connection signal="pressed" from="StartRoundButton" to="GameManager" method="_on_start_round_button_pressed"]
