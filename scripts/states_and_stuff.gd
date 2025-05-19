@@ -13,3 +13,7 @@ var speed = 500
 func change_boundary_bottom(new_position):
 	boundary_bottom_position = new_position
 	SignalBus.boundary_bottom_change.emit()
+	
+func change_player_speed(new_speed):
+	player_speed = new_speed
+	SignalBus.player_speed_change.emit()

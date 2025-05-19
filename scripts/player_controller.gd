@@ -2,6 +2,7 @@ extends CharacterBody2D
 @export var Speed = 150
 
 func _ready():
+	SignalBus.player_speed_change.connect(_on_player_speed_change)
 	Speed = StatesAndStuff.player_speed
 
 func _physics_process(delta):
@@ -17,3 +18,6 @@ func _physics_process(delta):
 		velocity *= Speed
 		
 	move_and_slide()
+	
+func _on_player_speed_change():
+	Speed = StatesAndStuff.player_speed
