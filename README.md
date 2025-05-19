@@ -3,7 +3,7 @@
 A simple game about avoiding gems on the way down to pick them up on the way up
 
 ### TODO:
-- Round end and start with a button to start the next round
+- Round end and start with a button to start the next round DONE!
 - Shop with upgrades
 - Sound effects
 - Juicy stuff like screenshake, freeze frames etc.
