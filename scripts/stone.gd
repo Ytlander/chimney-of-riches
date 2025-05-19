@@ -14,5 +14,5 @@ func _on_body_entered(body):
 		if StatesAndStuff.going_down:
 			queue_free()
 		if StatesAndStuff.going_down == false:
-			StatesAndStuff.money += self.value
+			SignalBus.stone_pickup.emit(self)
 			queue_free()

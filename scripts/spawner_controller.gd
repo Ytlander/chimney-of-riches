@@ -35,8 +35,9 @@ func spawn_wave():
 	wave_to_spawn.global_position = self.global_position
 	var coin_toss = randi_range(0, 1)
 	
+	#Change Random spawning to true for one of the tosses for some random spawned stones
 	if coin_toss == 1:
-		random_spawning = true
+		random_spawning = false
 	if coin_toss == 0:
 		random_spawning = false
 	
