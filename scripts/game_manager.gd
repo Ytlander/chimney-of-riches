@@ -30,6 +30,7 @@ func _on_timer_timeout():
 func round_start():
 	StatesAndStuff.going_down = true
 	round_start_signal.emit()
+	chimney_length = StatesAndStuff.chimney_length
 	timer.wait_time = chimney_length
 	timer.start()
 

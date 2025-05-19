@@ -22,21 +22,16 @@ position = Vector2(35, 122)
 
 [node name="StoneGreen6" parent="." instance=ExtResource("1_df1ui")]
 position = Vector2(65, 188)
-value = 5
 
 [node name="StoneGreen7" parent="." instance=ExtResource("1_df1ui")]
 position = Vector2(41, 204)
-value = 5
 
 [node name="StoneGreen8" parent="." instance=ExtResource("1_df1ui")]
 position = Vector2(17, 220)
-value = 5
 
 [node name="StoneGreen9" parent="." instance=ExtResource("1_df1ui")]
 position = Vector2(-8, 237)
-value = 5
 
 [node name="StoneGreen10" parent="." instance=ExtResource("1_df1ui")]
 position = Vector2(-37, 256)
-value = 5
 last_in_wave = true

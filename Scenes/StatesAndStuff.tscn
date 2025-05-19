@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6yx4v28v70m4"]
+
+[ext_resource type="Script" path="res://scripts/states_and_stuff.gd" id="1_3wyi8"]
+
+[node name="StatesAndStuff" type="Node"]
+script = ExtResource("1_3wyi8")
+player_speed = 100
+boundary_bottom_position = Vector2(-1, -40)

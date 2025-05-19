@@ -1,8 +1,8 @@
 extends CharacterBody2D
-
-
 @export var Speed = 150
 
+func _ready():
+	Speed = StatesAndStuff.player_speed
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.

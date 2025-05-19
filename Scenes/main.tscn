@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=12 format=3 uid="uid://discv8041v560"]
 
+[ext_resource type="Script" path="res://scripts/boundary_bottom_controller.gd" id="1_0ve1u"]
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
 [ext_resource type="PackedScene" uid="uid://gphfo5ll58sk" path="res://Scenes/player.tscn" id="1_lbt4y"]
 [ext_resource type="Script" path="res://scripts/wall_segment.gd" id="2_afgnd"]
@@ -50,13 +51,14 @@ shape = SubResource("WorldBoundaryShape2D_3vvi4")
 [node name="BoundaryBottom" type="StaticBody2D" parent="PlayerBoundaries"]
 position = Vector2(-1, 42)
 rotation = 4.71236
+script = ExtResource("1_0ve1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryBottom"]
 rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="ChimneySweep" parent="." instance=ExtResource("1_lbt4y")]
-position = Vector2(-1, -200)
+position = Vector2(-2, -292)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("2_afgnd")
@@ -88,10 +90,10 @@ offset_bottom = -215.0
 text = "Start"
 
 [node name="Money" type="Label" parent="GameManager"]
-offset_left = 95.0
-offset_top = -75.0
-offset_right = 135.0
-offset_bottom = -52.0
+offset_left = 97.0
+offset_top = -292.0
+offset_right = 137.0
+offset_bottom = -269.0
 text = "0000"
 
 [node name="Spawner" type="Node2D" parent="."]

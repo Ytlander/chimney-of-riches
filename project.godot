@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-StatesAndStuff="*res://scripts/states_and_stuff.gd"
 SignalBus="*res://scripts/signal_bus.gd"
+StatesAndStuff="*res://Scenes/StatesAndStuff.tscn"
 
 [display]
 
