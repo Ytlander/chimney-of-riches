@@ -130,9 +130,9 @@ text = "Exit shop
 
 [node name="SpeedUpgradeTitle" type="RichTextLabel" parent="GameManager/Shop"]
 layout_mode = 0
-offset_left = -75.0
+offset_left = -78.0
 offset_top = -246.0
-offset_right = -7.0
+offset_right = -10.0
 offset_bottom = -231.0
 theme_override_font_sizes/normal_font_size = 9
 text = "Speed"
@@ -140,27 +140,27 @@ fit_content = true
 
 [node name="SpeedUpgradeCost" type="RichTextLabel" parent="GameManager/Shop"]
 layout_mode = 0
-offset_left = -46.0
+offset_left = -49.0
 offset_top = -246.0
-offset_right = -13.0
+offset_right = -16.0
 offset_bottom = -232.0
 theme_override_font_sizes/normal_font_size = 9
 text = "0000"
 
 [node name="SpeedUpgradeButton" type="Button" parent="GameManager/Shop"]
 layout_mode = 0
-offset_left = -70.0
+offset_left = -73.0
 offset_top = -234.0
-offset_right = -36.0
+offset_right = -39.0
 offset_bottom = -209.0
 theme_override_font_sizes/font_size = 12
 text = "Buy!"
 
 [node name="AreaUpgradeTitle" type="RichTextLabel" parent="GameManager/Shop"]
 layout_mode = 0
-offset_left = -18.0
+offset_left = -21.0
 offset_top = -246.0
-offset_right = 50.0
+offset_right = 47.0
 offset_bottom = -231.0
 theme_override_font_sizes/normal_font_size = 9
 text = "Area"
@@ -168,18 +168,46 @@ fit_content = true
 
 [node name="AreaUpgradeCost" type="RichTextLabel" parent="GameManager/Shop"]
 layout_mode = 0
-offset_left = 4.0
+offset_left = 1.0
 offset_top = -246.0
-offset_right = 37.0
+offset_right = 34.0
 offset_bottom = -232.0
 theme_override_font_sizes/normal_font_size = 9
 text = "0000"
 
 [node name="AreaUpgradeButton" type="Button" parent="GameManager/Shop"]
 layout_mode = 0
-offset_left = -15.0
+offset_left = -18.0
 offset_top = -235.0
-offset_right = 19.0
+offset_right = 16.0
+offset_bottom = -210.0
+theme_override_font_sizes/font_size = 12
+text = "Buy!"
+
+[node name="LengthUpgradeTitle" type="RichTextLabel" parent="GameManager/Shop"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -246.0
+offset_right = 94.0
+offset_bottom = -231.0
+theme_override_font_sizes/normal_font_size = 9
+text = "Length"
+fit_content = true
+
+[node name="LengthUpgradeCost" type="RichTextLabel" parent="GameManager/Shop"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = -246.0
+offset_right = 90.0
+offset_bottom = -232.0
+theme_override_font_sizes/normal_font_size = 9
+text = "0000"
+
+[node name="LengthUpgradeButton" type="Button" parent="GameManager/Shop"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -235.0
+offset_right = 69.0
 offset_bottom = -210.0
 theme_override_font_sizes/font_size = 12
 text = "Buy!"
@@ -224,6 +252,8 @@ shape = SubResource("RectangleShape2D_7nt7k")
 [connection signal="pressed" from="GameManager/Shop/ExitShopButton" to="GameManager" method="_on_exit_shop_button_pressed"]
 [connection signal="pressed" from="GameManager/Shop/SpeedUpgradeButton" to="GameManager" method="_on_speed_upgrade_button_pressed"]
 [connection signal="pressed" from="GameManager/Shop/AreaUpgradeButton" to="GameManager" method="_on_area_upgrade_button_pressed"]
+[connection signal="pressed" from="GameManager/Shop/LengthUpgradeButton" to="GameManager" method="_on_area_upgrade_button_pressed"]
+[connection signal="pressed" from="GameManager/Shop/LengthUpgradeButton" to="GameManager" method="_on_length_upgrade_button_pressed"]
 [connection signal="pressed" from="GameManager/CheatButton" to="GameManager" method="_on_cheat_button_pressed"]
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="area_exited" from="SpawnBoundary" to="SpawnBoundary" method="_on_area_exited"]

@@ -8,12 +8,16 @@ extends Node
 @onready var shop_button = $ShopButton
 @onready var shop = $Shop
 @onready var speed_upgrade_cost = $Shop/SpeedUpgradeCost
+@onready var speed_upgrade_button = $Shop/SpeedUpgradeButton
 @onready var area_upgrade_cost = $Shop/AreaUpgradeCost
 @onready var area_upgrade_button = $Shop/AreaUpgradeButton
+@onready var length_upgrade_cost = $Shop/LengthUpgradeCost
+@onready var length_upgrade_button = $Shop/LengthUpgradeButton
 
 #Shop variables
 var speed_cost = 100
 var area_cost = 250
+var length_cost = 50
 
 
 signal round_start_signal
@@ -59,7 +63,10 @@ func _on_start_round_button_pressed():
 #region shop
 func shop_update():
 	speed_upgrade_cost.text = str(speed_cost)
-	area_upgrade_cost.text = str(area_cost)
+	if StatesAndStuff.boundary_bottom_position < StatesAndStuff.boundary_bottom_max:
+		area_upgrade_cost.text = str(area_cost)
+	if StatesAndStuff.chimney_length < StatesAndStuff.chimney_length_max:
+		length_upgrade_cost.text = str(length_cost)
 
 func _on_shop_button_pressed():
 	shop_update()
@@ -72,7 +79,7 @@ func _on_exit_shop_button_pressed():
 
 func _on_speed_upgrade_button_pressed():
 	if StatesAndStuff.money >= speed_cost:
-		StatesAndStuff.player_speed += 10
+		StatesAndStuff.change_player_speed(10)
 		deduct_money(speed_cost)
 		speed_cost += 50
 		shop_update()
@@ -86,6 +93,16 @@ func _on_area_upgrade_button_pressed():
 		if StatesAndStuff.boundary_bottom_position.y >= StatesAndStuff.boundary_bottom_max.y:
 			area_upgrade_cost.text = "MAX!"
 			area_upgrade_button.visible = false
+
+func _on_length_upgrade_button_pressed():
+	if StatesAndStuff.money >= length_cost:
+		StatesAndStuff.chimney_length += 10
+		deduct_money(length_cost)
+		length_cost += 10
+		shop_update()
+		if StatesAndStuff.chimney_length >= StatesAndStuff.chimney_length_max:
+			length_upgrade_cost.text = "Max!"
+			length_upgrade_button.visible = false
 
 func deduct_money(amount):
 	StatesAndStuff.money -= amount

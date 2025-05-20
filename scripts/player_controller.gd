@@ -12,7 +12,7 @@ func _physics_process(delta):
 	var directionY = Input.get_axis("up", "down")
 	
 	velocity.x = directionX
-	velocity.y = directionY
+	velocity.y = directionY * 1.5
 	
 	if velocity.length() > 0:
 		velocity *= Speed
