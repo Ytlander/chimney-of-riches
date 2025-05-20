@@ -252,7 +252,6 @@ shape = SubResource("RectangleShape2D_7nt7k")
 [connection signal="pressed" from="GameManager/Shop/ExitShopButton" to="GameManager" method="_on_exit_shop_button_pressed"]
 [connection signal="pressed" from="GameManager/Shop/SpeedUpgradeButton" to="GameManager" method="_on_speed_upgrade_button_pressed"]
 [connection signal="pressed" from="GameManager/Shop/AreaUpgradeButton" to="GameManager" method="_on_area_upgrade_button_pressed"]
-[connection signal="pressed" from="GameManager/Shop/LengthUpgradeButton" to="GameManager" method="_on_area_upgrade_button_pressed"]
 [connection signal="pressed" from="GameManager/Shop/LengthUpgradeButton" to="GameManager" method="_on_length_upgrade_button_pressed"]
 [connection signal="pressed" from="GameManager/CheatButton" to="GameManager" method="_on_cheat_button_pressed"]
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
