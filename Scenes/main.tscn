@@ -80,6 +80,7 @@ unique_name_in_owner = true
 script = ExtResource("5_unnun")
 
 [node name="Timer" type="Timer" parent="GameManager"]
+one_shot = true
 
 [node name="StartRoundButton" type="Button" parent="GameManager"]
 unique_name_in_owner = true
