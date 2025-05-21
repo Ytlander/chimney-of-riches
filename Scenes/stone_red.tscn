@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqy8k"]
 radius = 14.0
 
-[node name="StoneRed" type="Area2D"]
+[node name="StoneRed" type="Area2D" groups=["Stone"]]
 script = ExtResource("1_gs4we")
 value = 20
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1tuh3qo83cvr"]
+[gd_scene load_steps=4 format=3 uid="uid://1tuh3qo83cvr"]
 
 [ext_resource type="PackedScene" uid="uid://lxq5ynvhk2q5" path="res://Scenes/stone_green.tscn" id="1_dw5dl"]
 [ext_resource type="PackedScene" uid="uid://tcrl7uqxg5me" path="res://Scenes/stone_red.tscn" id="2_k8mgu"]
+[ext_resource type="PackedScene" uid="uid://dwmcqak8firuj" path="res://Scenes/multiplier_coin.tscn" id="3_jldqu"]
 
 [node name="Wave2" type="Node2D"]
 
@@ -14,16 +15,10 @@ position = Vector2(36, 43)
 position = Vector2(67, -1)
 
 [node name="StoneGreen3" parent="." instance=ExtResource("1_dw5dl")]
-position = Vector2(-58, 85)
-
-[node name="StoneGreen4" parent="." instance=ExtResource("1_dw5dl")]
-position = Vector2(2, 85)
+position = Vector2(-33, 86)
 
 [node name="StoneRed2" parent="." instance=ExtResource("2_k8mgu")]
-position = Vector2(-26, 127)
-
-[node name="StoneGreen5" parent="." instance=ExtResource("1_dw5dl")]
-position = Vector2(2, 171)
+position = Vector2(-1, 128)
 
 [node name="StoneGreen6" parent="." instance=ExtResource("1_dw5dl")]
 position = Vector2(67, 171)
@@ -32,11 +27,17 @@ position = Vector2(67, 171)
 position = Vector2(33, 213)
 
 [node name="StoneGreen7" parent="." instance=ExtResource("1_dw5dl")]
-position = Vector2(-50, 262)
-
-[node name="StoneGreen8" parent="." instance=ExtResource("1_dw5dl")]
-position = Vector2(2, 262)
+position = Vector2(-32, 261)
 
 [node name="StoneRed4" parent="." instance=ExtResource("2_k8mgu")]
-position = Vector2(-18, 304)
+position = Vector2(1, 304)
 last_in_wave = true
+
+[node name="MultiplierCoin" parent="." instance=ExtResource("3_jldqu")]
+position = Vector2(-1, 85)
+
+[node name="MultiplierCoin2" parent="." instance=ExtResource("3_jldqu")]
+position = Vector2(-1, 179)
+
+[node name="MultiplierCoin3" parent="." instance=ExtResource("3_jldqu")]
+position = Vector2(-1, 259)

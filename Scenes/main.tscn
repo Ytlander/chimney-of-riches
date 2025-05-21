@@ -98,11 +98,19 @@ offset_right = 137.0
 offset_bottom = -269.0
 text = "0000"
 
+[node name="Multiplier" type="Label" parent="GameManager"]
+offset_left = 103.0
+offset_top = -275.0
+offset_right = 143.0
+offset_bottom = -252.0
+theme_override_colors/font_color = Color(0, 0.657962, 0, 1)
+text = "00.0"
+
 [node name="ShopButton" type="Button" parent="GameManager"]
 offset_left = 92.0
-offset_top = -272.0
+offset_top = -252.0
 offset_right = 139.0
-offset_bottom = -241.0
+offset_bottom = -221.0
 text = "Shop"
 
 [node name="Shop" type="Control" parent="GameManager"]

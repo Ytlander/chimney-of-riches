@@ -1,8 +1,9 @@
 extends Area2D
-class_name Stone
 
-@export var value = 0
-@export var last_in_wave = false
+@export var multiplier_increase:float = 0.1
+
+func _ready():
+	SignalBus.going_up.connect(_on_going_up)
 
 func _physics_process(delta):
 	if StatesAndStuff.going_down:
@@ -13,7 +14,8 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		if StatesAndStuff.going_down:
+			SignalBus.coin_pickup.emit(multiplier_increase)
 			queue_free()
-		if StatesAndStuff.going_down == false:
-			SignalBus.stone_pickup.emit(self)
-			queue_free()
+
+func _on_going_up():
+	queue_free()

@@ -67,7 +67,6 @@ func _on_game_manager_round_start_signal():
 func _on_game_manager_round_end_signal():
 	no_spawn = true
 	instantiated_stones = stones.get_children()
-	print(instantiated_stones)
 	for stone in instantiated_stones:
 		stone.queue_free()
 	
