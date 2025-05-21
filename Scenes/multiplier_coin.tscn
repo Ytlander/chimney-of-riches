@@ -33,7 +33,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5rs67")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -53,9 +53,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o8wli")
 }],
-"loop": true,
+"loop": false,
 "name": &"shine",
-"speed": 7.0
+"speed": 14.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2vjv"]
@@ -68,9 +68,12 @@ multiplier_increase = 0.02
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ia2vg")
-frame_progress = 0.723729
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h2vjv")
 
+[node name="AnimationTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
