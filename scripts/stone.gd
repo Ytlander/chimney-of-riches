@@ -13,6 +13,7 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		if StatesAndStuff.going_down:
+			SignalBus.stone_destroy.emit()
 			queue_free()
 		if StatesAndStuff.going_down == false:
 			SignalBus.stone_pickup.emit(self)

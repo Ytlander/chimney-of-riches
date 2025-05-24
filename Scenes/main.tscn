@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=17 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="Script" path="res://scripts/boundary_bottom_controller.gd" id="1_0ve1u"]
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://b4spig4jnwa4l" path="res://Scenes/Waves/wave_1.tscn" id="6_4ep8a"]
 [ext_resource type="Script" path="res://scripts/spawn_boundary.gd" id="7_qqsn7"]
 [ext_resource type="PackedScene" uid="uid://1tuh3qo83cvr" path="res://Scenes/Waves/wave_2.tscn" id="7_wfnog"]
+[ext_resource type="Script" path="res://scripts/sound_controller.gd" id="10_fadye"]
+[ext_resource type="AudioStream" uid="uid://dsrnhfvdfrn5i" path="res://assets/SFX/stone_destroy.wav" id="11_nl5cn"]
+[ext_resource type="AudioStream" uid="uid://dn6x0vek2cmyr" path="res://assets/SFX/stone_pickup.wav" id="12_a64b5"]
+[ext_resource type="AudioStream" uid="uid://didcvlnwthgri" path="res://assets/SFX/coin_pickup.wav" id="13_phqyg"]
+[ext_resource type="AudioStream" uid="uid://cd5nifpxc3sw3" path="res://assets/SFX/purchase.wav" id="14_6lrr7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
 distance = 0.0157233
@@ -251,6 +256,21 @@ script = ExtResource("7_qqsn7")
 position = Vector2(0, 278)
 rotation = -3.13862
 shape = SubResource("RectangleShape2D_7nt7k")
+
+[node name="AudioController" type="Node" parent="."]
+script = ExtResource("10_fadye")
+
+[node name="StoneDestroy" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource("11_nl5cn")
+
+[node name="StonePickup" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource("12_a64b5")
+
+[node name="CoinPickup" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource("13_phqyg")
+
+[node name="ShopPurchase" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource("14_6lrr7")
 
 [connection signal="round_end_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_end_signal"]
 [connection signal="round_start_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_start_signal"]

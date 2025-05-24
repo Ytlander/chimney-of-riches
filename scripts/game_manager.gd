@@ -100,6 +100,7 @@ func _on_speed_upgrade_button_pressed():
 		deduct_money(speed_cost)
 		speed_cost += 50
 		shop_update()
+		SignalBus.shop_purchase.emit()
 
 func _on_area_upgrade_button_pressed():
 	if StatesAndStuff.money >= area_cost:
@@ -107,6 +108,7 @@ func _on_area_upgrade_button_pressed():
 		deduct_money(area_cost)
 		area_cost += 100
 		shop_update()
+		SignalBus.shop_purchase.emit()
 		if StatesAndStuff.boundary_bottom_position.y >= StatesAndStuff.boundary_bottom_max.y:
 			area_upgrade_cost.text = "MAX!"
 			area_upgrade_button.visible = false
@@ -117,6 +119,7 @@ func _on_length_upgrade_button_pressed():
 		deduct_money(length_cost)
 		length_cost += 10
 		shop_update()
+		SignalBus.shop_purchase.emit()
 		if StatesAndStuff.chimney_length >= StatesAndStuff.chimney_length_max:
 			length_upgrade_cost.text = "Max!"
 			length_upgrade_button.visible = false
