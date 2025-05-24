@@ -262,15 +262,19 @@ script = ExtResource("10_fadye")
 
 [node name="StoneDestroy" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource("11_nl5cn")
+max_polyphony = 3
 
 [node name="StonePickup" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource("12_a64b5")
+max_polyphony = 3
 
 [node name="CoinPickup" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource("13_phqyg")
+max_polyphony = 3
 
 [node name="ShopPurchase" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource("14_6lrr7")
+max_polyphony = 2
 
 [connection signal="round_end_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_end_signal"]
 [connection signal="round_start_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_start_signal"]
