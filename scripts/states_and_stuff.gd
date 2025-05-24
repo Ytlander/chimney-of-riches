@@ -7,6 +7,7 @@ var speed = 500
 
 #Upgrade related variables
 @export var player_speed: int
+@export var player_speed_max: int = 180
 @export var boundary_bottom_position: Vector2 #Max: Vector2(-1, 42) 
 var boundary_bottom_max: Vector2 = Vector2(-1, 50)
 @export var chimney_length: int = 10 #Default 10, max 60

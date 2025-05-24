@@ -101,6 +101,9 @@ func _on_speed_upgrade_button_pressed():
 		speed_cost += 50
 		shop_update()
 		SignalBus.shop_purchase.emit()
+		if StatesAndStuff.player_speed >= StatesAndStuff.player_speed_max:
+			speed_upgrade_cost.text = "MAX!"
+			speed_upgrade_button.visible = false
 
 func _on_area_upgrade_button_pressed():
 	if StatesAndStuff.money >= area_cost:
