@@ -79,7 +79,8 @@ func _on_start_round_button_pressed():
 	
 #region shop
 func shop_update():
-	speed_upgrade_cost.text = str(speed_cost)
+	if StatesAndStuff.player_speed < StatesAndStuff.player_speed_max:
+		speed_upgrade_cost.text = str(speed_cost)
 	if StatesAndStuff.boundary_bottom_position < StatesAndStuff.boundary_bottom_max:
 		area_upgrade_cost.text = str(area_cost)
 	if StatesAndStuff.chimney_length < StatesAndStuff.chimney_length_max:
