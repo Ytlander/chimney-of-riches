@@ -6,7 +6,7 @@ A simple game about avoiding gems on the way down to pick them up on the way up
 - Round end and start with a button to start the next round DONE!
 - Shop with upgrades POC DONE!
 - Golden multiplier coins to pick up on the way down DONE!
-- Sound effects Placeholders
+- Sound effects Placeholders DONE!
 - Juicy stuff like screenshake, freeze frames etc.
 - Animations
 - Improved player controller with acceleration/deceleration and maybe something more?
