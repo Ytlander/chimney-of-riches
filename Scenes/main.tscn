@@ -10,9 +10,9 @@
 [ext_resource type="Script" path="res://scripts/spawn_boundary.gd" id="7_qqsn7"]
 [ext_resource type="PackedScene" uid="uid://1tuh3qo83cvr" path="res://Scenes/Waves/wave_2.tscn" id="7_wfnog"]
 [ext_resource type="Script" path="res://scripts/sound_controller.gd" id="10_fadye"]
-[ext_resource type="AudioStream" uid="uid://dsrnhfvdfrn5i" path="res://assets/SFX/stone_destroy.wav" id="11_nl5cn"]
-[ext_resource type="AudioStream" uid="uid://dn6x0vek2cmyr" path="res://assets/SFX/stone_pickup.wav" id="12_a64b5"]
-[ext_resource type="AudioStream" uid="uid://didcvlnwthgri" path="res://assets/SFX/coin_pickup.wav" id="13_phqyg"]
+[ext_resource type="AudioStream" uid="uid://c62pmlr41i4jk" path="res://assets/SFX/stone_destroy_synth.wav" id="11_rh2xa"]
+[ext_resource type="AudioStream" uid="uid://b6k0ikjsi3ovl" path="res://assets/SFX/pickup_synth.wav" id="12_jro56"]
+[ext_resource type="AudioStream" uid="uid://y6ic0wck2pte" path="res://assets/SFX/coin_pickup_synth.wav" id="13_8pet2"]
 [ext_resource type="AudioStream" uid="uid://cd5nifpxc3sw3" path="res://assets/SFX/purchase.wav" id="14_6lrr7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
@@ -261,15 +261,15 @@ shape = SubResource("RectangleShape2D_7nt7k")
 script = ExtResource("10_fadye")
 
 [node name="StoneDestroy" type="AudioStreamPlayer" parent="AudioController"]
-stream = ExtResource("11_nl5cn")
+stream = ExtResource("11_rh2xa")
 max_polyphony = 3
 
 [node name="StonePickup" type="AudioStreamPlayer" parent="AudioController"]
-stream = ExtResource("12_a64b5")
+stream = ExtResource("12_jro56")
 max_polyphony = 3
 
 [node name="CoinPickup" type="AudioStreamPlayer" parent="AudioController"]
-stream = ExtResource("13_phqyg")
+stream = ExtResource("13_8pet2")
 max_polyphony = 3
 
 [node name="ShopPurchase" type="AudioStreamPlayer" parent="AudioController"]
