@@ -34,6 +34,7 @@ signal round_end_signal
 func _ready():
 	SignalBus.stone_pickup.connect(_on_stone_pickup)
 	SignalBus.coin_pickup.connect(_on_coin_pickup)
+	SignalBus.money_changed.connect(_on_money_changed)
 	shop.visible = false
 	start_round_button.visible = true
 	multiplier.text = "X" + str(money_multiplier)
@@ -43,6 +44,9 @@ func _process(delta):
 
 func _on_stone_pickup(stone):
 	StatesAndStuff.money += stone.value * money_multiplier
+
+func _on_money_changed():
+	print("on money changed")
 	money.text = str(StatesAndStuff.money)
 
 func _on_coin_pickup(multiplier_increase):
@@ -130,10 +134,8 @@ func _on_length_upgrade_button_pressed():
 
 func deduct_money(amount):
 	StatesAndStuff.money -= amount
-	money.text = str(StatesAndStuff.money)
 
 #endregion
 
 func _on_cheat_button_pressed():
 	StatesAndStuff.money += 1000
-	deduct_money(0)

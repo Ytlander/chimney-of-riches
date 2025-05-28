@@ -2,8 +2,13 @@ extends Node
 
 #General game Variables
 var going_down = true
-var money: int = 0
+var money: int = 0:
+	set(value):
+		money = value
+		SignalBus.money_changed.emit()
 var speed = 500
+
+
 
 #Upgrade related variables
 @export var player_speed: int
