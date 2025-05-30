@@ -66,6 +66,7 @@ func _on_timer_timeout():
 func round_start():
 	shop_button.visible = false
 	StatesAndStuff.going_down = true
+	StatesAndStuff.money = 0
 	round_start_signal.emit()
 	chimney_length = StatesAndStuff.chimney_length
 	timer.wait_time = chimney_length
