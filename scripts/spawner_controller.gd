@@ -32,6 +32,7 @@ func _process(delta):
 func spawn_wave():
 	var wave_to_spawn = wave_array.pick_random().instantiate()
 	stones.call_deferred("add_child", wave_to_spawn)
+	await get_tree().process_frame
 	wave_to_spawn.global_position = self.global_position
 	var coin_toss = randi_range(0, 1)
 	
