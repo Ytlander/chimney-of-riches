@@ -25,7 +25,7 @@ size = Vector2(178.011, 20)
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -171)
+position = Vector2(5, -171)
 zoom = Vector2(4, 4)
 
 [node name="PlayerBoundaries" type="Node2D" parent="."]
@@ -90,11 +90,10 @@ one_shot = true
 
 [node name="StartRoundButton" type="Button" parent="GameManager"]
 unique_name_in_owner = true
-visible = false
-offset_left = -23.0
-offset_top = -246.0
-offset_right = 24.0
-offset_bottom = -215.0
+offset_left = -21.0
+offset_top = -268.0
+offset_right = 26.0
+offset_bottom = -237.0
 text = "Start"
 
 [node name="Money" type="Label" parent="GameManager"]
