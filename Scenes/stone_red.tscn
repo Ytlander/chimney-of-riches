@@ -1,21 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://tcrl7uqxg5me"]
+[gd_scene load_steps=11 format=3 uid="uid://tcrl7uqxg5me"]
 
 [ext_resource type="Script" path="res://scripts/stone.gd" id="1_gs4we"]
-[ext_resource type="Texture2D" uid="uid://fa75wdqmgnif" path="res://assets/sprites/Basic graphics.png" id="1_gv1uw"]
+[ext_resource type="Texture2D" uid="uid://bpafn8nh4mlgf" path="res://assets/sprites/red_stone.png" id="2_6k0yg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqy8k"]
 radius = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuge7"]
+atlas = ExtResource("2_6k0yg")
+region = Rect2(48, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruvty"]
+atlas = ExtResource("2_6k0yg")
+region = Rect2(96, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xm82"]
+atlas = ExtResource("2_6k0yg")
+region = Rect2(144, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00qqt"]
+atlas = ExtResource("2_6k0yg")
+region = Rect2(192, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg41w"]
+atlas = ExtResource("2_6k0yg")
+region = Rect2(240, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7s3c"]
+atlas = ExtResource("2_6k0yg")
+region = Rect2(0, 0, 48, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1pfd2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuge7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruvty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xm82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00qqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg41w")
+}],
+"loop": false,
+"name": &"Explosion",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7s3c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="StoneRed" type="Area2D" groups=["Stone"]]
 script = ExtResource("1_gs4we")
 value = 20
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_gv1uw")
-region_enabled = true
-region_rect = Rect2(0, 240, 30, 30)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vqy8k")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -2)
+sprite_frames = SubResource("SpriteFrames_1pfd2")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

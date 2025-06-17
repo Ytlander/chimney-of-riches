@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=18 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="Script" path="res://scripts/boundary_bottom_controller.gd" id="1_0ve1u"]
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bj1e5mphcue0t" path="res://assets/SFX/pickup_stone_synth_soft_attack.wav" id="12_hj0ij"]
 [ext_resource type="AudioStream" uid="uid://y6ic0wck2pte" path="res://assets/SFX/coin_pickup_synth.wav" id="13_8pet2"]
 [ext_resource type="AudioStream" uid="uid://cd5nifpxc3sw3" path="res://assets/SFX/purchase.wav" id="14_6lrr7"]
+[ext_resource type="Script" path="res://scripts/animation_controller.gd" id="15_5w2va"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
 distance = 0.0157233
@@ -275,6 +276,9 @@ max_polyphony = 3
 [node name="ShopPurchase" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource("14_6lrr7")
 max_polyphony = 2
+
+[node name="AnimationController" type="Node" parent="."]
+script = ExtResource("15_5w2va")
 
 [connection signal="round_end_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_end_signal"]
 [connection signal="round_start_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_start_signal"]

@@ -1,6 +1,6 @@
 extends Node
 
-signal stone_destroy()
+signal stone_destroy(stone)
 signal stone_pickup(stone)
 signal coin_pickup(coin)
 signal going_up()

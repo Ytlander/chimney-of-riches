@@ -12,7 +12,7 @@ func _ready():
 	SignalBus.coin_pickup.connect(_on_coin_pickup)
 	SignalBus.shop_purchase.connect(_on_shop_purchase)
 	
-func _on_stone_destroy():
+func _on_stone_destroy(stone):
 	stone_destroy.play()
 
 func _on_stone_pickup(stone):
