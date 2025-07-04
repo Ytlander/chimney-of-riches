@@ -26,7 +26,7 @@ func _ready():
 	SignalBus.shop_purchase.connect(_on_shop_purchase)
 	
 	current_music_player = menu_music
-	current_music_player.play()
+	fade_in_music()
 	
 ##Sound Effects	
 func _on_stone_destroy(stone):
@@ -42,13 +42,12 @@ func _on_shop_purchase():
 	shop_purchase.play()
 	
 ##Music
-func fade_in_music(track: AudioStream):
-	current_music_player.stream = track
+func fade_in_music():
 	current_music_player.volume_db = MUTE_DB
 	
 	#Checking if we have stored a position and continues from there
-	if music_positions.has(track):
-		current_music_player.play(music_positions[track])
+	if music_positions.has(current_music_player.stream):
+		current_music_player.play(music_positions[current_music_player.stream])
 	else:
 		current_music_player.play()
 	
@@ -63,7 +62,7 @@ func fade_out_music():
 	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(current_music_player, "volume_db", MUTE_DB, fade_time)
 
-func crossfade_music_to(track: AudioStream):
+func crossfade_music_to():
 	fade_out_music()
 	
 	if current_music_player == menu_music:
@@ -71,10 +70,10 @@ func crossfade_music_to(track: AudioStream):
 	else:
 		current_music_player = menu_music
 	
-	fade_in_music(track)	
+	fade_in_music()	
 
 func _on_game_manager_round_start_signal():
-	crossfade_music_to(gameplay_music.stream)
+	crossfade_music_to()
 
 func _on_game_manager_round_end_signal():
-	crossfade_music_to(menu_music.stream)
+	crossfade_music_to()
