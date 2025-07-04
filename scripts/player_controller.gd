@@ -21,3 +21,4 @@ func _physics_process(delta):
 	
 func _on_player_speed_change():
 	Speed = StatesAndStuff.player_speed
+	

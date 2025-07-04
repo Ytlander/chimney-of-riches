@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=19 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="Script" path="res://scripts/boundary_bottom_controller.gd" id="1_0ve1u"]
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8qh7o"]
 [ext_resource type="PackedScene" uid="uid://gphfo5ll58sk" path="res://Scenes/player.tscn" id="1_lbt4y"]
 [ext_resource type="Script" path="res://scripts/wall_segment.gd" id="2_afgnd"]
 [ext_resource type="Script" path="res://scripts/spawner_controller.gd" id="5_anlq8"]
@@ -27,6 +28,8 @@ size = Vector2(178.011, 20)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5, -171)
 zoom = Vector2(4, 4)
+script = ExtResource("1_8qh7o")
+set_shake_strength = 3.0
 
 [node name="PlayerBoundaries" type="Node2D" parent="."]
 position = Vector2(1, -211)
