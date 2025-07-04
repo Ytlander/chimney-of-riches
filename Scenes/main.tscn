@@ -291,7 +291,9 @@ stream = ExtResource("17_64kea")
 script = ExtResource("15_5w2va")
 
 [connection signal="round_end_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_end_signal"]
+[connection signal="round_end_signal" from="GameManager" to="AudioController" method="_on_game_manager_round_end_signal"]
 [connection signal="round_start_signal" from="GameManager" to="Spawner" method="_on_game_manager_round_start_signal"]
+[connection signal="round_start_signal" from="GameManager" to="AudioController" method="_on_game_manager_round_start_signal"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="pressed" from="GameManager/StartRoundButton" to="GameManager" method="_on_start_round_button_pressed"]
 [connection signal="pressed" from="GameManager/ShopButton" to="GameManager" method="_on_shop_button_pressed"]
