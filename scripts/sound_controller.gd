@@ -14,6 +14,8 @@ const DEFAULT_MUSIC_DB:float = 0.0
 @export var fade_time: float = 2.0
 
 var current_music_player: AudioStreamPlayer
+
+#Store the position of each music track in this dictionary
 var music_positions: Dictionary = {}
 
 
@@ -44,6 +46,7 @@ func fade_in_music(track: AudioStream):
 	current_music_player.stream = track
 	current_music_player.volume_db = MUTE_DB
 	
+	#Checking if we have stored a position and continues from there
 	if music_positions.has(track):
 		current_music_player.play(music_positions[track])
 	else:
@@ -53,6 +56,7 @@ func fade_in_music(track: AudioStream):
 	tween.tween_property(current_music_player, "volume_db", DEFAULT_MUSIC_DB, fade_time)
 
 func fade_out_music():
+	#Storing the current position when the music fades out, using the stream itself as key.
 	if current_music_player.stream:
 		music_positions[current_music_player.stream] = current_music_player.get_playback_position()
 	
