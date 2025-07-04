@@ -46,7 +46,6 @@ func _on_stone_pickup(stone):
 	StatesAndStuff.money += stone.value * money_multiplier
 
 func _on_money_changed():
-	print("on money changed")
 	money.text = str(StatesAndStuff.money)
 
 func _on_coin_pickup(multiplier_increase):
