@@ -7,10 +7,17 @@ A simple game about avoiding gems on the way down to pick them up on the way up
 - Shop with upgrades POC DONE!
 - Golden multiplier coins to pick up on the way down DONE!
 - Sound effects Placeholders DONE!
-- Juicy stuff like screenshake, freeze frames etc.
-- Animations
+- Juicy stuff like screenshake, freeze frames etc. DONE!
+- Animations DONE !
+- Make it so that the length of a level is measured in waves and not in seconds
+- Waves for level 1
 - Improved player controller with acceleration/deceleration and maybe something more?
+- Hazards (something that needs to be avoided at all times, and if enough are collided with, you have to restart the round)
 - More waves
-- Test if set levels are more fun than random
 - UI code rework that makes sense
 - More upgrades and a rework of the shop code structure
+- More abilities
+  - No collision
+  - Teleport to the left or right edge
+  - Teleport to the top or bottom
+  - Vacuum ability (sucks in all gems in an area)
