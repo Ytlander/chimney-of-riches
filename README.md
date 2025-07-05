@@ -17,7 +17,7 @@ A simple game about avoiding gems on the way down to pick them up on the way up
 - UI code rework that makes sense
 - More upgrades and a rework of the shop code structure
 - More abilities
-- - No collision
+  - No collision
   - Teleport to the left or right edge
   - Teleport to the top or bottom
   - Vacuum ability (sucks in all gems in an area)
