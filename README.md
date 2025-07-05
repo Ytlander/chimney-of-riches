@@ -9,8 +9,8 @@ A simple game about avoiding gems on the way down to pick them up on the way up
 - Sound effects Placeholders DONE!
 - Juicy stuff like screenshake, freeze frames etc. DONE!
 - Animations DONE !
+- Make it so that the length of a level is measured in waves and not in seconds
 - Waves for level 1
-- 
 - Improved player controller with acceleration/deceleration and maybe something more?
 - Hazards (something that needs to be avoided at all times, and if enough are collided with, you have to restart the round)
 - More waves
