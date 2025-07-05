@@ -1,11 +1,11 @@
 extends Node
 
-var print_wave_value: bool = true
+var print_wave_value: bool = false
 
 func _ready():
 	SignalBus.wave_spawned.connect(_on_wave_spawned)
 
-func frameFreeze(slowness, duration):
+func frame_freeze(slowness, duration):
 	Engine.time_scale = slowness
 	await get_tree().create_timer(duration * slowness).timeout
 	Engine.time_scale = 1.0

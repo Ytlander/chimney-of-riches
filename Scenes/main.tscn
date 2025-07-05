@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=25 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="Script" path="res://scripts/boundary_bottom_controller.gd" id="1_0ve1u"]
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://cak0didrrr8ni" path="res://Scenes/Waves/wave_4.tscn" id="11_kopf5"]
 [ext_resource type="AudioStream" uid="uid://c62pmlr41i4jk" path="res://assets/SFX/stone_destroy_synth.wav" id="11_rh2xa"]
 [ext_resource type="AudioStream" uid="uid://bj1e5mphcue0t" path="res://assets/SFX/pickup_stone_synth_soft_attack.wav" id="12_hj0ij"]
+[ext_resource type="PackedScene" uid="uid://bcjuyqqvmoo3v" path="res://Scenes/Waves/wave_5.tscn" id="12_yunb4"]
 [ext_resource type="AudioStream" uid="uid://y6ic0wck2pte" path="res://assets/SFX/coin_pickup_synth.wav" id="13_8pet2"]
+[ext_resource type="PackedScene" uid="uid://cncmvn2t0m7uf" path="res://Scenes/Waves/wave_6.tscn" id="13_nwwqx"]
 [ext_resource type="AudioStream" uid="uid://cd5nifpxc3sw3" path="res://assets/SFX/purchase.wav" id="14_6lrr7"]
 [ext_resource type="Script" path="res://scripts/animation_controller.gd" id="15_5w2va"]
 [ext_resource type="AudioStream" uid="uid://cwi0cm82oro3k" path="res://assets/music/MyFirstSynths.ogg" id="16_xldkv"]
@@ -54,7 +56,7 @@ rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="BoundaryTop" type="StaticBody2D" parent="PlayerBoundaries"]
-position = Vector2(-1, -93)
+position = Vector2(-1, -84)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryTop"]
@@ -71,7 +73,7 @@ rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="ChimneySweep" parent="." instance=ExtResource("1_lbt4y")]
-position = Vector2(-2, -292)
+position = Vector2(-2, -286)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("2_afgnd")
@@ -233,6 +235,7 @@ theme_override_font_sizes/font_size = 12
 text = "Buy!"
 
 [node name="CheatButton" type="Button" parent="GameManager"]
+visible = false
 offset_left = 88.0
 offset_top = -69.0
 offset_right = 144.0
@@ -244,7 +247,7 @@ text = "Money now!"
 unique_name_in_owner = true
 position = Vector2(0, 311)
 script = ExtResource("5_anlq8")
-wave_array = Array[PackedScene]([ExtResource("6_4ep8a"), ExtResource("7_wfnog"), ExtResource("19_mw7k0"), ExtResource("11_kopf5")])
+wave_array = Array[PackedScene]([ExtResource("6_4ep8a"), ExtResource("7_wfnog"), ExtResource("19_mw7k0"), ExtResource("11_kopf5"), ExtResource("12_yunb4"), ExtResource("13_nwwqx")])
 
 [node name="SpawnPosLeft" type="Node2D" parent="Spawner"]
 position = Vector2(-50, 0)

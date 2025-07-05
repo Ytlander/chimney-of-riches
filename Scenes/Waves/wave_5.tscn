@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcjuyqqvmoo3v"]
+
+[ext_resource type="PackedScene" uid="uid://tcrl7uqxg5me" path="res://Scenes/stone_red.tscn" id="1_elx7p"]
+[ext_resource type="PackedScene" uid="uid://lxq5ynvhk2q5" path="res://Scenes/stone_green.tscn" id="2_j77et"]
+[ext_resource type="PackedScene" uid="uid://dwmcqak8firuj" path="res://Scenes/multiplier_coin.tscn" id="3_lnnjh"]
+
+[node name="Wave5" type="Node2D"]
+
+[node name="StoneRed" parent="." instance=ExtResource("1_elx7p")]
+position = Vector2(35, 55)
+
+[node name="StoneRed2" parent="." instance=ExtResource("1_elx7p")]
+position = Vector2(-33, 117)
+
+[node name="StoneRed3" parent="." instance=ExtResource("1_elx7p")]
+position = Vector2(16, 189)
+
+[node name="StoneGreen" parent="." instance=ExtResource("2_j77et")]
+position = Vector2(-61, 118)
+
+[node name="StoneGreen2" parent="." instance=ExtResource("2_j77et")]
+position = Vector2(36, 212)
+
+[node name="StoneRed4" parent="." instance=ExtResource("1_elx7p")]
+position = Vector2(-44, 248)
+
+[node name="StoneGreen4" parent="." instance=ExtResource("2_j77et")]
+position = Vector2(-44, 278)
+last_in_wave = true
+
+[node name="StoneGreen3" parent="." instance=ExtResource("2_j77et")]
+position = Vector2(61, 38)
+
+[node name="MultiplierCoin" parent="." instance=ExtResource("3_lnnjh")]
+position = Vector2(-46, 145)
+
+[node name="MultiplierCoin2" parent="." instance=ExtResource("3_lnnjh")]
+position = Vector2(-2, 245)
+
+[node name="MultiplierCoin3" parent="." instance=ExtResource("3_lnnjh")]
+position = Vector2(47, 89)

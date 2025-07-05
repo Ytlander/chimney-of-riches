@@ -34,7 +34,7 @@ position = Vector2(-64.5323, 289.358)
 position = Vector2(-5.53226, 229.358)
 
 [node name="StoneGreen18" parent="." instance=ExtResource("1_l2rwu")]
-position = Vector2(20.4677, 204.358)
+position = Vector2(12.4677, 205.358)
 
 [node name="StoneGreen17" parent="." instance=ExtResource("1_l2rwu")]
 position = Vector2(-4.53226, 357.358)
@@ -53,4 +53,4 @@ position = Vector2(-9.53226, 124.358)
 position = Vector2(-31.5323, 287.358)
 
 [node name="MultiplierCoin3" parent="." instance=ExtResource("2_x4auv")]
-position = Vector2(60.4677, 205.358)
+position = Vector2(59.4677, 205.358)

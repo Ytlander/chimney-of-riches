@@ -15,7 +15,7 @@ var speed = 500
 @export var player_speed_max: int = 180
 @export var boundary_bottom_position: Vector2 
 var boundary_bottom_max: Vector2 = Vector2(-1, 60)
-@export var chimney_length: int = 10 #Default 10, max 60
+@export var chimney_length: int = 20 #Default 10, max 60
 @export var chimney_length_max: int = 60
 
 func change_boundary_bottom(new_y_position):

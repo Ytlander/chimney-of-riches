@@ -19,7 +19,7 @@ extends Node
 #Shop variables
 var speed_cost = 100
 var area_cost = 250
-var length_cost = 50
+var length_cost = 500
 
 #Upgrade variables
 
@@ -103,7 +103,7 @@ func _on_speed_upgrade_button_pressed():
 	if StatesAndStuff.money >= speed_cost:
 		StatesAndStuff.change_player_speed(10)
 		deduct_money(speed_cost)
-		speed_cost += 50
+		speed_cost += 100
 		shop_update()
 		SignalBus.shop_purchase.emit()
 		if StatesAndStuff.player_speed >= StatesAndStuff.player_speed_max:
@@ -114,7 +114,7 @@ func _on_area_upgrade_button_pressed():
 	if StatesAndStuff.money >= area_cost:
 		StatesAndStuff.change_boundary_bottom(10)
 		deduct_money(area_cost)
-		area_cost += 100
+		area_cost += 250
 		shop_update()
 		SignalBus.shop_purchase.emit()
 		if StatesAndStuff.boundary_bottom_position.y >= StatesAndStuff.boundary_bottom_max.y:
@@ -125,7 +125,7 @@ func _on_length_upgrade_button_pressed():
 	if StatesAndStuff.money >= length_cost:
 		StatesAndStuff.chimney_length += 10
 		deduct_money(length_cost)
-		length_cost += 10
+		length_cost += 500
 		shop_update()
 		SignalBus.shop_purchase.emit()
 		if StatesAndStuff.chimney_length >= StatesAndStuff.chimney_length_max:
