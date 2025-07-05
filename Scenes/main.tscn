@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://discv8041v560"]
+[gd_scene load_steps=23 format=3 uid="uid://discv8041v560"]
 
 [ext_resource type="Script" path="res://scripts/boundary_bottom_controller.gd" id="1_0ve1u"]
 [ext_resource type="PackedScene" uid="uid://b5js8qs20agaq" path="res://Scenes/wall_segment.tscn" id="1_7ob5s"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/spawn_boundary.gd" id="7_qqsn7"]
 [ext_resource type="PackedScene" uid="uid://1tuh3qo83cvr" path="res://Scenes/Waves/wave_2.tscn" id="7_wfnog"]
 [ext_resource type="Script" path="res://scripts/sound_controller.gd" id="10_fadye"]
+[ext_resource type="PackedScene" uid="uid://cak0didrrr8ni" path="res://Scenes/Waves/wave_4.tscn" id="11_kopf5"]
 [ext_resource type="AudioStream" uid="uid://c62pmlr41i4jk" path="res://assets/SFX/stone_destroy_synth.wav" id="11_rh2xa"]
 [ext_resource type="AudioStream" uid="uid://bj1e5mphcue0t" path="res://assets/SFX/pickup_stone_synth_soft_attack.wav" id="12_hj0ij"]
 [ext_resource type="AudioStream" uid="uid://y6ic0wck2pte" path="res://assets/SFX/coin_pickup_synth.wav" id="13_8pet2"]
@@ -18,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/animation_controller.gd" id="15_5w2va"]
 [ext_resource type="AudioStream" uid="uid://cwi0cm82oro3k" path="res://assets/music/MyFirstSynths.ogg" id="16_xldkv"]
 [ext_resource type="AudioStream" uid="uid://p74m11g35w7x" path="res://assets/music/ShopSong.ogg" id="17_64kea"]
+[ext_resource type="PackedScene" uid="uid://c2ynk21dydao4" path="res://Scenes/Waves/wave_3.tscn" id="19_mw7k0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3vvi4"]
 distance = 0.0157233
@@ -52,7 +54,7 @@ rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="BoundaryTop" type="StaticBody2D" parent="PlayerBoundaries"]
-position = Vector2(-1, -95)
+position = Vector2(-1, -93)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryTop"]
@@ -60,7 +62,7 @@ rotation = 1.57304
 shape = SubResource("WorldBoundaryShape2D_3vvi4")
 
 [node name="BoundaryBottom" type="StaticBody2D" parent="PlayerBoundaries"]
-position = Vector2(-1, 42)
+position = Vector2(-1, 28)
 rotation = 4.71236
 script = ExtResource("1_0ve1u")
 
@@ -95,10 +97,10 @@ one_shot = true
 
 [node name="StartRoundButton" type="Button" parent="GameManager"]
 unique_name_in_owner = true
-offset_left = -21.0
-offset_top = -268.0
-offset_right = 26.0
-offset_bottom = -237.0
+offset_left = -22.0
+offset_top = -127.0
+offset_right = 25.0
+offset_bottom = -96.0
 text = "Start"
 
 [node name="Money" type="Label" parent="GameManager"]
@@ -239,9 +241,10 @@ theme_override_font_sizes/font_size = 8
 text = "Money now!"
 
 [node name="Spawner" type="Node2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, 311)
 script = ExtResource("5_anlq8")
-wave_array = Array[PackedScene]([ExtResource("6_4ep8a"), ExtResource("7_wfnog")])
+wave_array = Array[PackedScene]([ExtResource("6_4ep8a"), ExtResource("7_wfnog"), ExtResource("19_mw7k0"), ExtResource("11_kopf5")])
 
 [node name="SpawnPosLeft" type="Node2D" parent="Spawner"]
 position = Vector2(-50, 0)

@@ -35,6 +35,15 @@ position = Vector2(-8, 237)
 
 [node name="StoneGreen10" parent="." instance=ExtResource("1_df1ui")]
 position = Vector2(-37, 256)
+
+[node name="StoneGreen11" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-66, 316)
+
+[node name="StoneGreen12" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-39, 341)
+
+[node name="StoneGreen13" parent="." instance=ExtResource("1_df1ui")]
+position = Vector2(-14, 365)
 last_in_wave = true
 
 [node name="MultiplierCoin" parent="." instance=ExtResource("2_4eo0s")]

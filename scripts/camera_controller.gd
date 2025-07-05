@@ -31,12 +31,7 @@ func _process(delta):
 	
 	shake_offset = get_noise_offset(delta, shake_speed, shake_strength)
 	
-
-	if shake_strength > 0.1:
-		camera.offset = shake_offset
-	else:
-		camera.offset = Vector2.ZERO
-
+	camera.offset = shake_offset
 
 func get_noise_offset(delta: float, speed: float, strength: float) -> Vector2:
 	noise_i += delta * speed

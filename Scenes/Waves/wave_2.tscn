@@ -6,8 +6,6 @@
 
 [node name="Wave2" type="Node2D"]
 
-[node name="StoneGreen" parent="." instance=ExtResource("1_dw5dl")]
-
 [node name="StoneRed" parent="." instance=ExtResource("2_k8mgu")]
 position = Vector2(36, 43)
 

@@ -35,6 +35,7 @@ func spawn_wave():
 	await get_tree().process_frame
 	wave_to_spawn.global_position = self.global_position
 	var coin_toss = randi_range(0, 1)
+	SignalBus.wave_spawned.emit(wave_to_spawn)
 	
 	#Change Random spawning to true for one of the tosses for some random spawned stones
 	if coin_toss == 1:

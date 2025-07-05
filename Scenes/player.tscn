@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fa75wdqmgnif" path="res://assets/sprites/Basic graphics.png" id="2_1ugev"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vxka"]
+radius = 7.0
 height = 20.0
 
 [node name="ChimneySweep" type="CharacterBody2D" groups=["player"]]
@@ -23,6 +24,12 @@ region_rect = Rect2(0, 300, 20, 60)
 
 [node name="Rope2" type="Sprite2D" parent="Head"]
 position = Vector2(0, -105)
+texture = ExtResource("2_1ugev")
+region_enabled = true
+region_rect = Rect2(0, 300, 20, 60)
+
+[node name="Rope3" type="Sprite2D" parent="Head"]
+position = Vector2(0, -156)
 texture = ExtResource("2_1ugev")
 region_enabled = true
 region_rect = Rect2(0, 300, 20, 60)

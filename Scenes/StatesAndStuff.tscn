@@ -5,4 +5,4 @@
 [node name="StatesAndStuff" type="Node"]
 script = ExtResource("1_3wyi8")
 player_speed = 100
-boundary_bottom_position = Vector2(-1, -40)
+boundary_bottom_position = Vector2(-1, 28)

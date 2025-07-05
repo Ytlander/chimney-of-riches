@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cak0didrrr8ni"]
+
+[ext_resource type="PackedScene" uid="uid://lxq5ynvhk2q5" path="res://Scenes/stone_green.tscn" id="1_l2rwu"]
+[ext_resource type="PackedScene" uid="uid://dwmcqak8firuj" path="res://Scenes/multiplier_coin.tscn" id="2_x4auv"]
+
+[node name="Wave4" type="Node2D"]
+position = Vector2(-0.467743, 17.6423)
+
+[node name="StoneGreen2" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-13.5323, 74.3577)
+
+[node name="StoneGreen7" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-32.5323, 101.358)
+
+[node name="StoneGreen9" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-43.5323, 129.358)
+
+[node name="StoneGreen10" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-24.5323, 153.358)
+
+[node name="StoneGreen11" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-1.53226, 178.358)
+
+[node name="StoneGreen13" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-32.5323, 243.358)
+
+[node name="StoneGreen14" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-55.5323, 262.358)
+
+[node name="StoneGreen15" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-64.5323, 289.358)
+
+[node name="StoneGreen16" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-5.53226, 229.358)
+
+[node name="StoneGreen18" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(20.4677, 204.358)
+
+[node name="StoneGreen17" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-4.53226, 357.358)
+last_in_wave = true
+
+[node name="StoneGreen19" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-23.5323, 335.358)
+
+[node name="StoneGreen20" parent="." instance=ExtResource("1_l2rwu")]
+position = Vector2(-49.5323, 315.358)
+
+[node name="MultiplierCoin" parent="." instance=ExtResource("2_x4auv")]
+position = Vector2(-9.53226, 124.358)
+
+[node name="MultiplierCoin2" parent="." instance=ExtResource("2_x4auv")]
+position = Vector2(-31.5323, 287.358)
+
+[node name="MultiplierCoin3" parent="." instance=ExtResource("2_x4auv")]
+position = Vector2(60.4677, 205.358)
