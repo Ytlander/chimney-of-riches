@@ -235,7 +235,6 @@ theme_override_font_sizes/font_size = 12
 text = "Buy!"
 
 [node name="CheatButton" type="Button" parent="GameManager"]
-visible = false
 offset_left = 88.0
 offset_top = -69.0
 offset_right = 144.0
