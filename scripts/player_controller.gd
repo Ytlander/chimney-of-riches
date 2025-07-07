@@ -1,9 +1,9 @@
 extends CharacterBody2D
-@export var Speed = 150
+@export var speed = 150
 
 func _ready():
 	SignalBus.player_speed_change.connect(_on_player_speed_change)
-	Speed = StatesAndStuff.player_speed
+	speed = StatesAndStuff.player_speed
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -12,10 +12,10 @@ func _physics_process(delta):
 	velocity = direction
 	velocity.y *= 1.5
 	
-	velocity *= Speed
+	velocity *= speed
 		
 	move_and_slide()
 	
 func _on_player_speed_change():
-	Speed = StatesAndStuff.player_speed
+	speed = StatesAndStuff.player_speed
 	
