@@ -9,10 +9,9 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
 	
-	velocity = direction
 	velocity.y *= 1.5
 	
-	velocity *= speed
+	velocity = direction * speed
 		
 	move_and_slide()
 	
